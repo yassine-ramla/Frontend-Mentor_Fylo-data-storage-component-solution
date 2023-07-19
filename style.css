@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+
+body {
+    width: 100vw;
+    height: 100svh;
+    background-image: url('./images/bg-mobile.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: hsl(229, 57%, 11%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#background {
+    display: none;
+}
+
+main {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.fylo {
+    width: 100%;
+    border-radius: 12px 100px 12px 12px;
+    background-color: hsl(228, 56%, 26%);
+    padding: 10%;
+}
+
+.fylo>img {
+    margin-bottom: 30px;
+}
+
+.icons {
+    display: flex;
+}
+
+.folder {
+    width: 50px;
+    height: 50px;
+    background-color: hsl(229, 57%, 11%);
+    border-radius: 10px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.storage {
+    width: 100%;
+    color: hsl(243, 100%, 93%);
+    background-color: hsl(228, 56%, 26%);
+    padding: 10%;
+    padding-bottom: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 12px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.storage p span {
+    color: white;
+    font-weight: bold;
+}
+
+.storage-bar {
+    width: 90%;
+    height: fit-content;
+    background: hsl(229, 57%, 11%);
+    border-radius: 8px;
+    padding: 2px;
+    margin-top: 5%;
+}
+
+.used {
+    width: 81.5%;
+    height: 15px;
+    background: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+    border-radius: 8px;
+    position: relative;
+}
+
+.used::after {
+    content: "";
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background-color: hsl(243, 100%, 93%);
+    right: 2px;
+    top: 2px;
+}
+
+.max-min {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 3%;
+    font-weight: 700;
+}
+
+.left {
+    width: 50%;
+    height: 50%;
+    background-color: hsl(243, 100%, 93%);
+    color: hsl(229, 57%, 11%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 100%;
+    transform: translate(0, -50%);
+}
+
+.left p {
+    color: hsl(228, 56%, 26%);
+    font-weight: 400;
+}
+
+.left p span {
+    color: hsl(229, 57%, 11%);
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+footer {
+    display: none;
+}
+
+@media (min-width: 600px) {
+    body {
+        background: none;
+        background-color: hsl(229, 57%, 11%);
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    #background {
+        display: inline;
+        width: 100%;
+        min-height: 50%;
+        position: absolute;
+        top: 50%;
+        z-index: -1;
+    }
+
+    main {
+        width: 75%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: center;
+    }
+
+    .fylo {
+        width: 40%;
+        min-width: 240px;
+        padding: min(45px, 10%);
+        padding-right: min(100px, 25%);
+        margin-right: 3%;
+    }
+
+    .folder {
+        min-width: 40px;
+    }
+
+    .storage {
+        padding: min(30px, 5%);
+        padding-bottom: min(30px, 5%);
+        min-width: 360px;
+        align-items: flex-start;
+        border-radius: 12px;
+        margin-top: 0;
+        position: relative;
+    }
+
+    .left {
+        width: fit-content;
+        height: fit-content;
+        padding: min(3%, 20px);
+        top: 0;
+        right: calc(min(30px, 5%));
+    }
+
+    .left::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 0;
+        height: 0;
+        border: 20px solid transparent;
+        border-right: 20px solid hsl(243, 100%, 93%);
+        transform: translate(0, -50%);
+    }
+
+    .storage-bar {
+        width: 100%;
+        margin-top: 15px;
+    }
+    
+    .max-min {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    footer {
+        display: inline;
+        position: absolute;
+        bottom: 15px;
+        color: hsl(243, 100%, 93%);
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+    footer a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+    }
+
+    footer a:hover {
+        color: hsl(229, 57%, 11%);
+    }
+}
